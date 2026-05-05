@@ -8,6 +8,9 @@ import { createServer } from "http";
 import { commonApp } from "./APIs/CommonAPI.js";
 import { workspaceApp } from "./APIs/WorkspaceAPI.js";
 
+import { connectRedis } from "./config/redis.js";
+import { initializeSocket } from "./sockets/socket.js";
+
 config();
 
 const app = exp();
