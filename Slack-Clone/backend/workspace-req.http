@@ -1,0 +1,66 @@
+### Create Workspace
+POST http://localhost:5000/workspace-api/workspaces
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5ZjhjOWJhYmY1NzU0YjQ5MjJiODVkNCIsImVtYWlsIjoidXNlcjFAbWFpbC5jb20iLCJyb2xlIjoiVVNFUiIsImlhdCI6MTc3NzkxMjgxMywiZXhwIjoxNzc3OTk5MjEzfQ.7T8vi-p-S3MKqBzshJ1bGeUTEh-2p_RN5zm1HEXPoLE
+
+{
+  "workspaceName": "Team Workspace",
+  "description": "Main workspace for team communication"
+}
+
+
+### Get My Workspaces
+GET http://localhost:5000/workspace-api/workspaces
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5ZjhjOWJhYmY1NzU0YjQ5MjJiODVkNCIsImVtYWlsIjoidXNlcjFAbWFpbC5jb20iLCJyb2xlIjoiVVNFUiIsImlhdCI6MTc3NzkxMjgxMywiZXhwIjoxNzc3OTk5MjEzfQ.7T8vi-p-S3MKqBzshJ1bGeUTEh-2p_RN5zm1HEXPoLE
+
+
+
+### Get Single Workspace
+GET http://localhost:5000/workspace-api/workspace/69f8cc87bf5754b4922b85d6
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5ZjhjOWJhYmY1NzU0YjQ5MjJiODVkNCIsImVtYWlsIjoidXNlcjFAbWFpbC5jb20iLCJyb2xlIjoiVVNFUiIsImlhdCI6MTc3NzkxMjgxMywiZXhwIjoxNzc3OTk5MjEzfQ.7T8vi-p-S3MKqBzshJ1bGeUTEh-2p_RN5zm1HEXPoLE
+
+
+### Add Member To Workspace
+PUT http://localhost:5000/workspace-api/workspace/member
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5ZjhjOWJhYmY1NzU0YjQ5MjJiODVkNCIsImVtYWlsIjoidXNlcjFAbWFpbC5jb20iLCJyb2xlIjoiVVNFUiIsImlhdCI6MTc3NzkxMjgxMywiZXhwIjoxNzc3OTk5MjEzfQ.7T8vi-p-S3MKqBzshJ1bGeUTEh-2p_RN5zm1HEXPoLE
+
+{
+  "workspaceId": "69f8cc87bf5754b4922b85d6",
+  "email": "user2@mail.com",
+  "role": "MEMBER"
+}
+
+
+### Add Admin Member To Workspace
+PUT http://localhost:5000/workspace-api/workspace/member
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5ZjhjOWJhYmY1NzU0YjQ5MjJiODVkNCIsImVtYWlsIjoidXNlcjFAbWFpbC5jb20iLCJyb2xlIjoiVVNFUiIsImlhdCI6MTc3NzkxMjgxMywiZXhwIjoxNzc3OTk5MjEzfQ.7T8vi-p-S3MKqBzshJ1bGeUTEh-2p_RN5zm1HEXPoLE
+
+{
+  "workspaceId": "69f8cc87bf5754b4922b85d6",
+  "email": "admin@mail.com",
+  "role": "ADMIN"
+}
+
+
+### Soft Delete Workspace
+PATCH http://localhost:5000/workspace-api/workspace/status
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5ZjhjOWJhYmY1NzU0YjQ5MjJiODVkNCIsImVtYWlsIjoidXNlcjFAbWFpbC5jb20iLCJyb2xlIjoiVVNFUiIsImlhdCI6MTc3NzkxMjgxMywiZXhwIjoxNzc3OTk5MjEzfQ.7T8vi-p-S3MKqBzshJ1bGeUTEh-2p_RN5zm1HEXPoLE
+
+{
+  "workspaceId": "69f8cc87bf5754b4922b85d6",
+  "isWorkspaceActive": false
+}
+
+
+### Restore Workspace
+PATCH http://localhost:5000/workspace-api/workspace/status
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5ZjhjOWJhYmY1NzU0YjQ5MjJiODVkNCIsImVtYWlsIjoidXNlcjFAbWFpbC5jb20iLCJyb2xlIjoiVVNFUiIsImlhdCI6MTc3NzkxMjgxMywiZXhwIjoxNzc3OTk5MjEzfQ.7T8vi-p-S3MKqBzshJ1bGeUTEh-2p_RN5zm1HEXPoLE
+
+{
+  "workspaceId": "69f8cc87bf5754b4922b85d6",
+  "isWorkspaceActive": true
+}
