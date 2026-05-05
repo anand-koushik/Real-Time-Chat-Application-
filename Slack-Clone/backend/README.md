@@ -6,10 +6,8 @@ This backend is built for a Real-Time Chat Application, similar to a simple Slac
 
 The main purpose of the backend is to allow users to communicate inside workspaces using channels and direct messages. It also supports file sharing, reactions, message editing, thread replies, notifications, and real-time updates.
 
-This backend follows the same simple structure as the blog application backend:
+This backend follows the same simple structure:
 
-- No controllers folder
-- No services folder
 - API files contain both routes and logic
 - Mongoose models are stored separately
 - Middleware is simple and reusable
