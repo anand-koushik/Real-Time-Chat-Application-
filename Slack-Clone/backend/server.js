@@ -6,7 +6,6 @@ import cors from "cors";
 import { createServer } from "http";
 
 import { commonApp } from "./APIs/CommonAPI.js";
-import { workspaceApp } from "./APIs/WorkspaceAPI.js";
 
 config();
 
@@ -28,7 +27,7 @@ app.use(cookieParser());
 
 // path level middlewares
 app.use("/auth", commonApp);
-app.use("/workspace-api", workspaceApp);
+
 
 // assign port
 const port = process.env.PORT || 5000;
