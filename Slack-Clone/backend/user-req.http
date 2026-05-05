@@ -1,0 +1,80 @@
+### Register User
+POST http://localhost:5000/auth/users
+Content-Type: application/json
+
+{
+  "firstName": "user1",
+  "lastName": "test",
+  "email": "user1@mail.com",
+  "password": "user1",
+  "role": "USER",
+  "profileImageUrl": "https://example.com/user.png"
+}
+
+### Register User 2
+POST http://localhost:5000/auth/users
+Content-Type: application/json
+
+{
+  "firstName": "user2",
+  "lastName": "test",
+  "email": "user2@mail.com",
+  "password": "user2",
+  "role": "USER",
+  "profileImageUrl": "https://example.com/user2.png"
+}
+
+
+
+### Register Admin
+POST http://localhost:5000/auth/users
+Content-Type: application/json
+
+{
+  "firstName": "admin",
+  "lastName": "test",
+  "email": "admin@mail.com",
+  "password": "admin",
+  "role": "ADMIN",
+  "profileImageUrl": "https://example.com/admin.png"
+}
+
+
+### User Login
+POST http://localhost:5000/auth/login
+Content-Type: application/json
+
+{
+  "email": "user1@mail.com",
+  "password": "user@1"
+}
+
+
+### Admin Login
+POST http://localhost:5000/auth/login
+Content-Type: application/json
+
+{
+  "email": "admin@mail.com",
+  "password": "admin"
+}
+
+
+### Check Auth
+GET http://localhost:5000/auth/check-auth
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5ZjhjOWJhYmY1NzU0YjQ5MjJiODVkNCIsImVtYWlsIjoidXNlcjFAbWFpbC5jb20iLCJyb2xlIjoiVVNFUiIsImlhdCI6MTc3NzkxNjIwNywiZXhwIjoxNzc4MDAyNjA3fQ.E5Nm4h0M7EEuGyBJP_bKRzWSQHACELrRWekEuCSWPBY
+
+
+### Change Password
+PUT http://localhost:5000/auth/password
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5ZjhjOWJhYmY1NzU0YjQ5MjJiODVkNCIsImVtYWlsIjoidXNlcjFAbWFpbC5jb20iLCJyb2xlIjoiVVNFUiIsImlhdCI6MTc3NzkxNjIwNywiZXhwIjoxNzc4MDAyNjA3fQ.E5Nm4h0M7EEuGyBJP_bKRzWSQHACELrRWekEuCSWPBY
+
+{
+  "currentPassword": "user1",
+  "newPassword": "user@1"
+}
+
+
+### Logout
+GET http://localhost:5000/auth/logout
